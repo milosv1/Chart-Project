@@ -21,6 +21,8 @@ register_matplotlib_converters()
 
 #UTC = YYYY-DAY-MONTH / Just a note.
 
+#Quick to-do, make charts interactive, where you can hover mouse and view more info.
+
 ##-----------------------------------------------
 #BTC-AUD - data
 #ARB.AX -data1
