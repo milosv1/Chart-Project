@@ -44,19 +44,32 @@ data1 = arb_ax.history(
     start = '2020-01-01',
     end = '2021-10-01',
     interval = "1d")    
+
+data2 = xro_ax.history(
+    start = '2020-01-01',
+    end = '2021-10-01',
+    interval = "1d"   
+)    
 #----------------------------
 
 data.sort_values('Date', inplace=True, ascending=True)
 data = data[data['Volume']>0] #filter garbage values
 data.drop(['Dividends', 'Stock Splits'], axis=1, inplace=True)
 
+
 data1.sort_values('Date', inplace=True, ascending=True)
 data1 = data1[data1['Volume']>0] #filter garbage values
 data1.drop(['Dividends', 'Stock Splits'], axis=1, inplace=True)
 
 
+data2.sort_values('Date', inplace=True, ascending=True)
+data2 = data2[data2['Volume']>0] #filter garbage values
+data2.drop(['Dividends', 'Stock Splits'], axis=1, inplace=True)
+
+
 data.head()
 data1.head()
+data2.head()
 
 #visualization of data, Plotting the price Close. from facecolor w -> b
 plt.figure(num=None, 
@@ -65,19 +78,30 @@ plt.figure(num=None,
         facecolor='w', 
         edgecolor='k')
 
+
 data['Close'].plot()
 data1['Close'].plot()
+data2['Close'].plot()
+
 
 plt.tight_layout()
 plt.grid()
 plt.show()      
 
+
 print_ticker = btc_aud
 print_ticker1 = arb_ax
+print_ticker2 = xro_ax
 
 print_close = data['Close']
 print_arb_close = data1['Close']
+print_xro_close = data2['Close']
 
-print('Symbol:', print_ticker, print_ticker1)
-print('Close:', print_close,print_arb_close)
 
+print('Symbol:', print_ticker,
+                 print_ticker1,
+                 print_ticker2)
+
+print('Close:', print_close,
+                print_arb_close,
+                print_xro_close)
