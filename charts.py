@@ -26,9 +26,10 @@ register_matplotlib_converters()
 #XRO
 #-------------------------------------------------
 
-#SYMBOLS
+#My Symbols
 btc_aud = yf.Ticker("BTC-AUD")
 arb_ax = yf.Ticker("ARB.AX")
+xro_ax = yf.Ticker("XRO.AX")
 #----------------------------
 
 #History
