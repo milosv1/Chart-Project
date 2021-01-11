@@ -102,6 +102,6 @@ print('Symbol:', print_ticker,
                  print_ticker1,
                  print_ticker2)
 
-print('Close:', print_close,
-                print_arb_close,
-                print_xro_close)
+print('Close:', '[BTC-AUD]', print_close,
+                '[ARB.AX]',print_arb_close,
+                '[XRO.AX]',print_xro_close)
