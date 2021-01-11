@@ -11,7 +11,8 @@ register_matplotlib_converters()
 #TSLA CHART | N/A....  | N/A
 #################################################
 
-#The command line holds info such as Open & Close prices of each stock.
+
+#The command line holds info such as Close and date (UTC Format) for prices of each stock.
 
 
 #Firstly, we need to figure out how to get the 2 x 3 charts working, where we 
