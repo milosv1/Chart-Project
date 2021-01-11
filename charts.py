@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
+
 #################################################
 #XRO CHART | ARB CHART | BTC CHART
 #TSLA CHART | N/A....  | N/A
@@ -21,16 +22,17 @@ register_matplotlib_converters()
 #UTC = YYYY-DAY-MONTH / Just a note.
 
 ##-----------------------------------------------
-#BTC-AUD 
-#ARB.AX
-#TSLA
-#XRO
+#BTC-AUD - data
+#ARB.AX -data1
+#TSLA - data2
+#XRO - data3
 #-------------------------------------------------
 
 #My Symbols
 btc_aud = yf.Ticker("BTC-AUD")
 arb_ax = yf.Ticker("ARB.AX")
 xro_ax = yf.Ticker("XRO.AX")
+tsla = yf.Ticker("TSLA")
 #----------------------------
 
 #History
@@ -51,6 +53,12 @@ data2 = xro_ax.history(
     end = '2021-10-01',
     interval = "1d"   
 )    
+
+data3 = tsla.history(
+    start = '2020-01-01',
+    end = '2021-10-01',
+    interval = "1d"
+)
 #----------------------------
 
 data.sort_values('Date', inplace=True, ascending=True)
@@ -67,10 +75,16 @@ data2.sort_values('Date', inplace=True, ascending=True)
 data2 = data2[data2['Volume']>0] #filter garbage values
 data2.drop(['Dividends', 'Stock Splits'], axis=1, inplace=True)
 
+data3.sort_values('Date', inplace=True, ascending=True)
+data3 = data3[data3['Volume']>0] #filter garbage values
+data3.drop(['Dividends', 'Stock Splits'], axis=1, inplace=True)
+
 
 data.head()
 data1.head()
 data2.head()
+data3.head()
+
 
 #visualization of data, Plotting the price Close. from facecolor w -> b
 plt.figure(num=None, 
@@ -83,8 +97,9 @@ plt.figure(num=None,
 data['Close'].plot()
 data1['Close'].plot()
 data2['Close'].plot()
+data3['Close'].plot()
 
-
+plt.title('BTC-AUD', loc='center')
 plt.tight_layout()
 plt.grid()
 plt.show()      
@@ -93,16 +108,21 @@ plt.show()
 print_ticker = btc_aud
 print_ticker1 = arb_ax
 print_ticker2 = xro_ax
+print_ticker3 = tsla
+
 
 print_close = data['Close']
 print_arb_close = data1['Close']
 print_xro_close = data2['Close']
-
+print_tsla_close = data3['Close']
 
 print('Symbol:', print_ticker,
                  print_ticker1,
-                 print_ticker2)
+                 print_ticker2,
+                 print_ticker3)
+
 
 print('Close:', '[BTC-AUD]', print_close,
                 '[ARB.AX]',print_arb_close,
-                '[XRO.AX]',print_xro_close)
+                '[XRO.AX]',print_xro_close,
+                '[TSLA - USD]',print_tsla_close)
