@@ -38,13 +38,11 @@ tsla = yf.Ticker("TSLA")
 #----------------------------
 
 #History
-#first symbol history
 data = btc_aud.history(
     start = '2020-01-01',
     end = '2021-10-01',
     interval = "1d")
     
-#second symbol history
 data1 = arb_ax.history(
     start = '2020-01-01',
     end = '2021-10-01',
@@ -101,17 +99,17 @@ data1['Close'].plot()
 data2['Close'].plot()
 data3['Close'].plot()
 
+
 plt.title('BTC-AUD', loc='center')
 plt.tight_layout()
 plt.grid()
 plt.show()      
 
-
+#below are outputs, so these are printed to cmd line - (once the BTC-AUD chart is closed).
 print_ticker = btc_aud
 print_ticker1 = arb_ax
 print_ticker2 = xro_ax
 print_ticker3 = tsla
-
 
 print_close = data['Close']
 print_arb_close = data1['Close']
@@ -128,3 +126,4 @@ print('Close:', '[BTC-AUD]', print_close,
                 '[ARB.AX]',print_arb_close,
                 '[XRO.AX]',print_xro_close,
                 '[TSLA - USD]',print_tsla_close)
+
