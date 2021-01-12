@@ -12,6 +12,12 @@ register_matplotlib_converters()
 #TSLA CHART | N/A....  | N/A
 #################################################
 
+#Quick note to self:
+#The charts can even be arranged like this:
+#  | XRO CHART
+#  | ARB CHART
+#  | BTC CHART
+#  | TSLA CHART 
 
 #The command line holds info such as Close and date (UTC Format) for prices of each stock.
 
