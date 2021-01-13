@@ -128,8 +128,8 @@ print('Symbol:', print_ticker,
                  print_ticker3)
 
 
-print('Close:', '[BTC-AUD]', print_close,
-                '[ARB.AX]',print_arb_close,
-                '[XRO.AX]',print_xro_close,
-                '[TSLA - USD]',print_tsla_close)
+print('Close:', '[Bitcoin AUD]', print_close,
+                '[ARB Corporation Limited]',print_arb_close,
+                '[Xero Limited]',print_xro_close,
+                '[Tesla, Inc.]',print_tsla_close)
 
