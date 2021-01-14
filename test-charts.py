@@ -21,4 +21,15 @@ register_matplotlib_converters()
 
 #The command line holds info such as Close and date (UTC Format) for prices of each stock.
 
-print("this is an added file which works as a testing ground for data \n - and charts.")
+#print("this is an added file which works as a testing ground for data \n - and charts.")
+
+#our symbols:
+btc_aud = yf.ticker("BTC-AUD")
+
+#Must be in UTF format due to yfinance library.
+#Start & End dates of Symbols:
+data_btc = btc_aud.history(
+    start = '2020-01-01',
+    end = '2021-14-01',
+    interval = '1d'
+)
