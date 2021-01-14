@@ -24,12 +24,33 @@ register_matplotlib_converters()
 #print("this is an added file which works as a testing ground for data \n - and charts.")
 
 #our symbols:
-btc_aud = yf.ticker("BTC-AUD")
+btc_aud = yf.Ticker("BTC-AUD")
 
 #Must be in UTF format due to yfinance library.
 #Start & End dates of Symbols:
 data_btc = btc_aud.history(
     start = '2020-01-01',
-    end = '2021-14-01',
+    end = '2021-01-14',
     interval = '1d'
 )
+
+data_btc.sort_values('Date', inplace=True, ascending=True)
+data_btc = data_btc[data_btc['Volume']>0] #filter garbage values
+data_btc.drop(['Dividends', 'Stock Splits'], axis=1, inplace=True)
+
+data_btc.head()
+
+plot.figure(num=None, 
+        figsize=(15, 6), 
+        dpi=80, 
+        facecolor='w', 
+        edgecolor='k')
+
+data_btc['Close'].plot()
+
+plot.title('BTC-AUD', loc='center')
+plot.tight_layout()
+plot.grid()
+plot.show()  
+
+## -------------------------------
