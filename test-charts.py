@@ -29,7 +29,7 @@ btc_aud = yf.Ticker("BTC-AUD")
 #Must be in UTF format due to yfinance library.
 #Start & End dates of Symbols:
 data_btc = btc_aud.history(
-    start = '2020-08-20',
+    start = '2020-01-01',
     end = '2021-01-21',
     interval = '1d'
 )
@@ -48,7 +48,13 @@ plot.figure(num=None,
 
 data_btc['Close'].plot()
 
-plot.title('BTC-AUD', loc='center')
+
+last_price = (data_btc.tail(1)['Close'].iloc[0])
+getcur_vol = (data_btc.tail(1)['Volume'].iloc[0])
+
+
+#plot.title('BTC-AUD', loc='center')
+plot.title(f'BTC-AUD {last_price}', loc='center')
 plot.tight_layout()
 plot.grid()
 plot.show()  
@@ -59,8 +65,6 @@ plot.show()
 #print last price
 #print last volume
 #2021-01-19
-last_price = (data_btc.tail(1)['Close'].iloc[0])
-getcur_vol = (data_btc.tail(1)['Volume'].iloc[0])
 
-print(btc_aud,last_price,getcur_vol)
+print(btc_aud,last_price,'Volume',getcur_vol)
 ## -------------------------------
