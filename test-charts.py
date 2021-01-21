@@ -30,7 +30,7 @@ btc_aud = yf.Ticker("BTC-AUD")
 #Start & End dates of Symbols:
 data_btc = btc_aud.history(
     start = '2020-01-01',
-    end = '2021-01-14',
+    end = '2021-01-21',
     interval = '1d'
 )
 
@@ -53,4 +53,10 @@ plot.tight_layout()
 plot.grid()
 plot.show()  
 
+#printcur_btc_aud_price = data_btc['Close']
+#print(f'{printcur_btc_aud_price}') 
+
+#print final price
+last_price = (data_btc.tail(1)['Close'].iloc[0])
+print(btc_aud,last_price)
 ## -------------------------------
