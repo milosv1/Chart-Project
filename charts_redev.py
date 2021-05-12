@@ -5,9 +5,23 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def main():
+def create_chart():
+    #TODO Enter start date as input- ex yyyy-mm-dd
+    #TODO Enter End date as input - ex yyyy-mm-dd
+    #TODO Enter Interval as input - ex 1d/1 Day
+    #TODO Enter Ticker as input - ex TSLA
 
-    print("first commit message..")
+    #TODO Be able to validate ticker input
+    #TODO Generate barchart based on inputs above
+
+    #ticker_name = "" empty as it will need input.
+    #Ticker = yf.Ticker(ticker_name) 
+    print("work on TODO's above.")
+
+
+def main():
+    create_chart()
+    
 
 
 
