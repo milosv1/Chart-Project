@@ -5,22 +5,23 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def create_chart():
+def print_price(ticker_input):
+    output = yf.Ticker(ticker_input)
+    
     #TODO Enter start date as input- ex yyyy-mm-dd
     #TODO Enter End date as input - ex yyyy-mm-dd
     #TODO Enter Interval as input - ex 1d/1 Day
     #TODO Enter Ticker as input - ex TSLA
-
-    #TODO Be able to validate ticker input
+    #TODO Be able to validate ticker input - is TSLA a valid symbol?
     #TODO Generate barchart based on inputs above
 
     #ticker_name = "" empty as it will need input.
     #Ticker = yf.Ticker(ticker_name) 
-    print("work on TODO's above.")
+    #print("work on TODO's above.")
 
 
 def main():
-    create_chart()
+    print_price("BTC-AUD")
     
 
 
