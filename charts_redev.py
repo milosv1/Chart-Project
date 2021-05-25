@@ -6,8 +6,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def print_price(ticker_input):
-    output = yf.Ticker(ticker_input)
-    
+    btc_output = yf.Ticker(ticker_input)
+    #symbol = btc_output['Symbol']
+    #lp = ticker_input['lastprice']
+    print("info:", btc_output.info)
     #TODO Enter start date as input- ex yyyy-mm-dd
     #TODO Enter End date as input - ex yyyy-mm-dd
     #TODO Enter Interval as input - ex 1d/1 Day
