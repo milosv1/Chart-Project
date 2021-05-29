@@ -5,11 +5,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def print_price(ticker_input):
-    btc_output = yf.Ticker(ticker_input)
+
     #symbol = btc_output['Symbol']
     #lp = ticker_input['lastprice']
-    print("info:", btc_output.info)
     #TODO Enter start date as input- ex yyyy-mm-dd
     #TODO Enter End date as input - ex yyyy-mm-dd
     #TODO Enter Interval as input - ex 1d/1 Day
@@ -21,9 +19,17 @@ def print_price(ticker_input):
     #Ticker = yf.Ticker(ticker_name) 
     #print("work on TODO's above.")
 
+def getTickerInfo(ticker_input):
+    btc_info = yf.Ticker(ticker_input)
+    print(f"info: {btc_info.info}")
+    
+
+
+
+    
 
 def main():
-    print_price("BTC-AUD")
+    getTickerInfo("BTC-AUD")
     
 
 
