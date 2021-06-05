@@ -19,7 +19,8 @@ import matplotlib.pyplot as plt
     #Ticker = yf.Ticker(ticker_name) 
     #print("work on TODO's above.")
 
-def getTickerInfo(ticker_input):
+def getTickerInfo():
+    ticker_input = "BTC-AUD"
     btc_info = yf.Ticker(ticker_input)
     print(f"info: {btc_info.info}")
     
@@ -29,7 +30,7 @@ def getTickerInfo(ticker_input):
     
 
 def main():
-    getTickerInfo("BTC-AUD")
+    getTickerInfo()
     
 
 
