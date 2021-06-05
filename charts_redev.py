@@ -24,6 +24,12 @@ def getTickerInfo():
     ticker_input_BHP = "BHP.AX"
     btc_info = yf.Ticker(ticker_input_BTC)
     bhp_info = yf.Ticker(ticker_input_BHP)
+    owned = 0
+    print("Found:")
+    for ticker in ticker_input_BHP, ticker_input_BTC:
+        owned += 1
+        print(f"{owned}:{ticker}")
+
     #print(f"info: {btc_info.info}\n")
     #print(f"info: {bhp_info.info}\n")
 
