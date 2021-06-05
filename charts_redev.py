@@ -20,18 +20,23 @@ import matplotlib.pyplot as plt
     #print("work on TODO's above.")
 
 def getTickerInfo():
-    ticker_input = "BTC-AUD"
-    btc_info = yf.Ticker(ticker_input)
-    print(f"info: {btc_info.info}")
-    
+    ticker_input_BTC = "BTC-AUD"
+    ticker_input_BHP = "BHP.AX"
+    btc_info = yf.Ticker(ticker_input_BTC)
+    bhp_info = yf.Ticker(ticker_input_BHP)
+    #print(f"info: {btc_info.info}\n")
+    #print(f"info: {bhp_info.info}\n")
 
 
+
+def getTickerPrice():
+    print("This function needs work.")
 
     
 
 def main():
     getTickerInfo()
-    
+    getTickerPrice()
 
 
 
